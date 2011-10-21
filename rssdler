@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+
+import codecs
+import sys
+
+import rssdler
+#pickle looks for these in __main__
+from rssdler import SaveInfo, FailedItem, DownloadItemConfig 
+
+if __name__ == '__main__': 
+    sys.stdout = codecs.getwriter( "utf-8" )( sys.stdout, "replace" )
+    sys.stderr = codecs.getwriter( "utf-8" )( sys.stderr, "replace" )
+    rssdler._main(sys.argv)
